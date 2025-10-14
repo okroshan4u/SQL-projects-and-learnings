@@ -1,4 +1,4 @@
--- Create Customer Table
+-- Create Customer Tabl
 CREATE TABLE customer(
   customerID INT PRIMARY KEY,
   first_name VARCHAR(50),
@@ -56,3 +56,4 @@ SET payment_mode = 'Net Banking'
 WHERE customerID = (
   SELECT customerID FROM customer WHERE first_name = 'Roshan'
 );
+
