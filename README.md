@@ -1,111 +1,92 @@
-# 💳 Customer-Payment SQL Project
+# 🗄️ SQL Projects Repository
 
-This project demonstrates how to create and manage **relational tables** in SQL — specifically, a `customer` table and a `payment` table with a **foreign key relationship**. It includes data insertion, updating, and joining operations.
-
----
-
-## 🧾 Project Overview
-
-The project covers:
-- Creating `customer` and `payment` tables.
-- Establishing a **foreign key** relationship between them.
-- Performing **INSERT**, **SELECT**, **UPDATE**, and **INNER JOIN** operations.
-- Viewing updated and joined data after modifications.
+Welcome to my **SQL Projects Repository**!  
+This repository is a collection of all my **SQL-based projects**, focused on data analysis, database design, optimization, and querying real-world datasets. Each project demonstrates practical SQL skills and problem-solving approaches using different database systems such as **MySQL**, **PostgreSQL**, and **SQLite**.
 
 ---
 
-## 🗃️ Database Schema
+## 📘 About This Repository
 
-### `customer` Table
-| Column       | Type         | Description                 |
-|---------------|--------------|-----------------------------|
-| customerID    | INT (PK)     | Unique ID for each customer |
-| first_name    | VARCHAR(50)  | Customer's first name       |
-| last_name     | VARCHAR(50)  | Customer's last name        |
-| address_id    | INT          | Address reference ID        |
+This repo is dedicated **solely to SQL projects** — no Python, Power BI, or Excel files here.  
+It’s a central place to explore how I use SQL for:
 
-### `payment` Table
-| Column         | Type          | Description                         |
-|----------------|---------------|-------------------------------------|
-| paymentID      | INT (PK)      | Unique payment ID                   |
-| customerID     | INT (FK)      | References `customer(customerID)`   |
-| payment_mode   | VARCHAR(30)   | Mode of payment (UPI, Cash, etc.)   |
-| date_of_payment| DATE          | Date of payment                     |
-| amount         | DECIMAL(10,2) | Amount paid                         |
+- Data cleaning and transformation  
+- Query optimization and performance tuning  
+- Building relational databases and ERDs  
+- Analyzing business data through advanced SQL queries  
+- Exploring complex joins, subqueries, and window functions  
 
 ---
 
-## ⚙️ Queries Used
+## 🧩 Project Structure
 
-### 🔹 Create Tables
-```sql
-CREATE TABLE customer(...);
-CREATE TABLE payment(...);
-```
-### 🔹 Insert Data
-```sql
+Each project folder typically contains:
 
-INSERT INTO customer (customerID, first_name, last_name, address_id)
-VALUES
-(1, 'Roshan', 'kumar', 5),			
-(2, 'Anshika', 'kumari', 4),
-(3, 'Akash', 'Roy', 2),
-(4, 'Ramu', 'kumar', 5),
-(5, 'Meghana', 'shaw', 3);
 
-INSERT INTO payment (paymentID, customerID, payment_mode, date, amount)
-VALUES
-(101, 1, 'UPI', '2025-10-10', 1200.50),
-(102, 2, 'Credit Card', '2025-10-09', 850.00),
-(103, 3, 'Cash', '2025-10-11', 500.00),
-(104, 4, 'Debit Card', '2025-10-12', 950.75),
-(105, 5, 'Net Banking', '2025-10-13', 2000.00);
-```
 
-### 🔹 Inner Join
-```sql
-SELECT * 
-FROM customer AS c
-INNER JOIN payment AS p
-ON c.customerID = p.customerID;
+---
 
-```
-This query joins the customer and payment tables based on their shared customerID, showing complete customer details along with their payments.
+## 🚀 Example Projects
 
-### 🔹 Update Records
-```sql
-UPDATE payment
-SET payment_mode = 'Net Banking'
-WHERE customerID = (
-  SELECT customerID FROM customer WHERE first_name = 'Roshan' LIMIT 1
-);
+| Project Name                | Description                                                              | Database     |
+|-----------------------------|--------------------------------------------------------------------------|--------------|
+| **Sales Insights**          | Analyzed sales data to identify trends, top-performing regions, and revenue growth opportunities. | MySQL        |
+| **HR Analytics**            | Explored employee performance, attrition, and department metrics using SQL joins and aggregations. | PostgreSQL   |
+| **E-commerce Data Analysis**| Built queries to track customer behavior, order frequency, and top products. | SQLite        |
 
-```
-This updates Roshan’s payment mode to Net Banking.
+---
 
-### 🔹 View Updated Joined Table
-```sql
-SELECT * 
-FROM customer AS c
-INNER JOIN payment AS p
-ON c.customerID = p.customerID;
-```
+## 🧠 Skills Demonstrated
 
-Use this to see the updated record in the joined table.
+- SQL Joins (INNER, LEFT, RIGHT, FULL)  
+- Subqueries and Common Table Expressions (CTEs)  
+- Aggregate Functions and GROUP BY  
+- Window Functions (RANK, DENSE_RANK, ROW_NUMBER)  
+- Data Cleaning and Transformation  
+- Database Schema Design and Normalization  
+- Query Optimization Techniques  
 
-🧠 Learning Outcome
+---
 
-By completing this project, you’ll understand:
+## ⚙️ Tools & Technologies
 
-How relational databases connect tables using foreign keys
+- **Databases:** MySQL · PostgreSQL · SQLite  
+- **Visualization (optional):** Power BI / Tableau (for a few projects)  
+- **Environment / Editors:** MySQL Workbench · pgAdmin · DBeaver  
 
-How to perform joins to combine related data
+---
 
-How to update multiple records dynamically in SQL
+## 📂 How to Use
 
-🧑‍💻 Author
+1. Clone this repository  
+   ```bash
+   git clone https://github.com/okroshan4u/sql-projects.git
 
-Roshan Kumar Ram
-📧 okroshan4u@gmail.com
+2. Open the .sql file in your preferred SQL editor.
 
-🔗 GitHub Profile
+3. Import any required datasets and execute the queries.
+
+## 🏆 Purpose
+
+This repository serves as:
+
+● A portfolio of my SQL learning journey
+
+
+● A showcase of data-driven problem-solving
+
+● A resource for others learning SQL
+
+## 📫 Contact
+
+If you'd like to collaborate, discuss data projects, or just connect:
+
+📧 Email: okroshan4u@gmail.com
+
+💼 **LinkedIn:** [Roshan kumar ram](https://www.linkedin.com/in/roshan-kumar-ram-512457246/)
+
+🐙 **GitHub:** [okroshan4u](https://github.com/okroshan4u)
+
+
+
+   
