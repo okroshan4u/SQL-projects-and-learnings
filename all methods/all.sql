@@ -1,5 +1,5 @@
 create table employees(
-  --empId int primary key,
+ empId int primary key,
   --empName varchar(50),
   --empDepat varchar(50),
   --salary decimal(10,2),
@@ -100,3 +100,4 @@ where Department = e.Department
 ) as topearner 
 
 GROUP BY city;
+
