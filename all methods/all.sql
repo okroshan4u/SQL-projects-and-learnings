@@ -2,7 +2,7 @@ create table employees(
  empId int primary key,
   empName varchar(50),
   empDepat varchar(50),
-  --salary decimal(10,2),
+  salary decimal(10,2),
 --city varchar(50)
 --);
 /*INSERT INTO Employees (empId, empName, empDepat, salary, city) VALUES
@@ -100,6 +100,7 @@ where Department = e.Department
 ) as topearner 
 
 GROUP BY city;
+
 
 
 
