@@ -1,4 +1,4 @@
---create table employees(
+create table employees(
   --empId int primary key,
   --empName varchar(50),
   --empDepat varchar(50),
@@ -98,4 +98,5 @@ where e.salary = (
 where Department = e.Department
 )
 ) as topearner 
+
 GROUP BY city;
