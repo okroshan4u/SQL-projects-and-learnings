@@ -7,7 +7,7 @@
 -- city varchar(50)
 -- );
 
-
+/*
 INSERT INTO employees (empId, empName, empDepat, salary, city) VALUES
 (1, 'Roshan', 'IT', 51444, 'Pune'),
 (2, 'Sneha', 'HR', 51823, 'Mumbai'),
@@ -114,4 +114,5 @@ where Department = e.Department
 )
 ) as topearner 
 GROUP BY city;
+
 */
