@@ -19,7 +19,7 @@ INSERT INTO employees (empId, empName, empDepat, salary, city) VALUES
 (8, 'Meera', 'HR', 51678, 'Ahmedabad'),
 (9, 'Aditya', 'IT', 52490, 'Jaipur'),
 (10, 'Kavya', 'Finance', 52135, 'Chandigarh');
-
+*/
 
 /*
 SELECT max(salary) FROM Employees
@@ -116,3 +116,4 @@ where Department = e.Department
 GROUP BY city;
 
 */
+
