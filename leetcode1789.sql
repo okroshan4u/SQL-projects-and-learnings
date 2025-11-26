@@ -1,4 +1,4 @@
-# leetcode 1789
+# problem leetcode 1789
 SELECT
   employee_id,
   department_id
@@ -11,3 +11,4 @@ SELECT
 FROM Employee
 GROUP BY 1
 HAVING COUNT(*) = 1;
+
