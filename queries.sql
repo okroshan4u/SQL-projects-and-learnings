@@ -1,4 +1,4 @@
-** sub query **
+** sub queries **
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
     customer_name VARCHAR(50),
@@ -460,4 +460,5 @@ emp_id	emp_name	manager_id	level
 3	Tom		2		2
 5	Shiva		4		3
 7	Damodar		5		4	
+
 
