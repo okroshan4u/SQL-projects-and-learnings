@@ -66,7 +66,7 @@ INSERT INTO cat_sum VALUES
 (500, 'Vayu');
 
 
-** without window fun **
+** without window function **
 select SUM(new_id) as sumId , new_cat from Category_summary
 group by new_cat
 order by new_id desc
@@ -460,5 +460,6 @@ emp_id	emp_name	manager_id	level
 3	Tom		2		2
 5	Shiva		4		3
 7	Damodar		5		4	
+
 
 
