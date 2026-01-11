@@ -453,13 +453,14 @@ ORDER BY level, emp_id;
 **output**
 Output
 emp_id	emp_name	manager_id	level
-1	Madhav				0
-6	Keshav		1		1
+1		Madhav				0
+6		Keshav		1		1
 2	Sam		1		1
 4	Arjun		6		2
 3	Tom		2		2
 5	Shiva		4		3
 7	Damodar		5		4	
+
 
 
 
