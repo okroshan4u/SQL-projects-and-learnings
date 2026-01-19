@@ -58,14 +58,7 @@ where id = 101
 )
 
 
--- 4. Find customers who made a payment on the latest payment date
-select * from customer
-where payment_date = (
-  select Max(payment_date)
-from customer
 
-
-)
 
 
 create table customer_2 (
@@ -87,5 +80,6 @@ insert into customer_2 values
 
 select * from customer
 where id in (select address_id from customer_2)
+
 
 
