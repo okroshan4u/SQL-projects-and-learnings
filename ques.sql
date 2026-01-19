@@ -49,13 +49,7 @@ where payment_amount > (
 
 
 
--- 3. Find customers who used the same payment type as customer_id = 101
-select * from customer
-where payment_type = (
-  select payment_type from customer
-where id = 101
 
-)
 
 	-- 4. Find customers who made a payment on the latest payment date
 select * from customer
@@ -86,6 +80,7 @@ insert into customer_2 values
 
 select * from customer
 where id in (select address_id from customer_2)
+
 
 
 
