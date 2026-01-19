@@ -47,6 +47,13 @@ where payment_amount > (
   from customer
 )
 
+	-- 3. Find customers who used the same payment type as customer_id = 101
+select * from customer
+where payment_type = (
+  select payment_type from customer
+where id = 101
+
+)
 
 
 
@@ -80,6 +87,7 @@ insert into customer_2 values
 
 select * from customer
 where id in (select address_id from customer_2)
+
 
 
 
