@@ -66,3 +66,51 @@ INSERT INTO cat_sum VALUES
 (500, 'Vayu');
 
 
+** without window fun **
+select SUM(new_id) as sumId , new_cat from Category_summary
+group by new_cat
+order by new_id desc
+
+** with window fun **
+
+select new_id, new_cat, 
+sum(new_id) over(partition by new_cat) as "Total",
+avg(new_id) over(partition by new_cat) as "avg",
+count(new_id) over (partition by new_cat) as "count",
+min(new_id) over(partition by new_cat) as "MIN",
+max(new_id) over(partition by new_cat) as "MAX"
+from cat_sum
+
+
+** or advanced version **
+SELECT
+    new_id,
+    new_cat,
+    SUM(new_id) OVER (
+        PARTITION BY new_cat
+        ORDER BY new_id
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+    ) AS Total,
+    AVG(new_id) OVER (
+        PARTITION BY new_cat
+        ORDER BY new_id
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+    ) AS Average,
+    COUNT(new_id) OVER (
+        PARTITION BY new_cat
+        ORDER BY new_id
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+    ) AS Count,
+    MIN(new_id) OVER (
+        PARTITION BY new_cat
+        ORDER BY new_id
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+    ) AS Min,
+    MAX(new_id) OVER (
+        PARTITION BY new_cat
+        ORDER BY new_id
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+    ) AS Max
+FROM cat_sum
+ORDER BY new_cat, new_id;
+
