@@ -32,3 +32,37 @@ select * from Customers as c
 join Payments as p
 on c.customer_id = p.customer_id
 where p.amount > (select avg(amount) from Payments)
+
+** logical operator**
+
+select * from Payments 
+where payment_id IN (select customer_id from Customers)
+
+** exits operator **
+select customer_name, city from Customers as c
+where EXISTS(
+  select customer_id , amount from Payments as p
+  where c.customer_id = p.customer_id
+	and amount > 100
+)
+
+
+** window functions **
+CREATE TABLE cat_sum(
+    new_id INT,
+    new_cat VARCHAR(20),
+);
+
+
+INSERT INTO cat_sum VALUES
+(100, 'Agni'),
+(200, 'Agni'),
+
+(500, 'Dharti'),
+(700, 'Dharti'),
+
+(200, 'Vayu'),
+(300, 'Vayu'),
+(500, 'Vayu');
+
+
