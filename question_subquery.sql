@@ -114,3 +114,12 @@ SELECT
 FROM cat_sum
 ORDER BY new_cat, new_id;
 
+
+**Rank Function **
+select new_id,
+row_number() over(order by new_id) as "Row number",
+rank() over (order by new_id ) as "Rank",
+dense_rank() over(order by new_id) as "Dense Rank",
+percent_rank() over (order by new_id) as "percent rank"
+from cat_sum
+
