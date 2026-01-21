@@ -120,6 +120,30 @@ select new_id,
 row_number() over(order by new_id) as "Row number",
 rank() over (order by new_id ) as "Rank",
 dense_rank() over(order by new_id) as "Dense Rank",
+
+** analytic functions **
+
+select new_id,
+first_value(new_id) over(order by new_id) as "First value",
+last_value(new_id) over(order by new_id) as "Last value",
+lead(new_id) over(order by new_id) as "Lead",
+lag(new_id) over (order by new_id) as "Lag"
+from cat_sum
+
+** with offset value **
+select new_id,
+first_value(new_id) over(order by new_id ) as "First value",
+last_value(new_id) over(order by new_id) as "Last value",
+lead(new_id,2) over(order by new_id) as "Lead",
+lag(new_id,2) over (order by new_id) as "Lag"
+from cat_sum
+
+// here offset means if we take example of lead then setting offset 2 means go to the skit the next row and go for the the value next to next row and put on the lead column
+
+here is the result of offset 2
+on lead and lag both	
+	
 percent_rank() over (order by new_id) as "percent rank"
 from cat_sum
+
 
