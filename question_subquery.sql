@@ -146,4 +146,13 @@ on lead and lag both
 percent_rank() over (order by new_id) as "percent rank"
 from cat_sum
 
+new_id	First value	Last value	Lead	Lag
+100		100		100		200	
+200	100		200		300	
+200	100		200		500	100
+300	100		300		500	200
+500	100		500		700	200
+500	100		500			300
+700	100		700			500
+
 
