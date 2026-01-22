@@ -155,5 +155,24 @@ new_id	First value	Last value	Lead	Lag
 500			100			500				300
 700			100			700				500
 
+	
+*** CASE expression ***
+
+CREATE TABLE customer_payments (
+    customer_id BIGINT PRIMARY KEY,
+    amount BIGINT,
+    mode VARCHAR(50),
+    payment_date DATE
+);
+
+
+
+
+INSERT INTO customer_payments (customer_id, amount, mode, payment_date) VALUES
+(1, 60,  'Cash',          '2020-09-24'),
+(10, 70, 'mobile Payment','2021-02-28'),
+(11, 80, 'Cash',          '2021-03-01'),
+(2, 500, 'Credit Card',   '2020-04-27'),
+(8, 100, 'Cash',          '2021-01-26');
 
 
