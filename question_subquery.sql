@@ -185,11 +185,12 @@ else "inexensive prd"
 end as prdStatus from customer_payments
 
 
-customer_id	amount	mode	payment_date	prdStatus
-1	60	Cash	        2020-09-24	inexensive prd
-10	70	mobile Payment	2021-02-28	inexensive prd
-11	80	Cash		2021-03-01	inexensive prd
-2	500	Credit Card	2020-04-27	expensive prd
-8	100	Cash		2021-01-26	moderate prd
+customer_id	amount	mode			payment_date	prdStatus
+1			60		Cash	 		2020-09-24		inexensive prd
+10			70		mobile Payment	2021-02-28		inexensive prd
+11			80		Cash			2021-03-01		inexensive prd
+2			500		Credit Card		2020-04-27		expensive prd
+8			100		Cash			2021-01-26		moderate prd
+
 
 
