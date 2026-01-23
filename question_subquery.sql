@@ -210,4 +210,21 @@ customer_id	amount	mode		payment_date	custStatus
 2		500	Credit Card	2020-04-27	Prime Customer
 8		100	Cash		2021-01-26	plus customer
 
+** CTE **
+
+CREATE TABLE payments (
+    customer_id BIGINT PRIMARY KEY,
+    amount BIGINT,
+    mode VARCHAR(50),
+    payment_date DATE
+);
+
+INSERT INTO payments (customer_id, amount, mode, payment_date) VALUES
+(1, 60, 'Cash', '2020-09-24'),
+(11, 80, 'Cash', '2021-03-01'),
+(2, 500, 'Credit Card', '2020-04-27'),
+(8, 100, 'Cash', '2021-01-26'),
+(7, 20, 'Mobile Payment', '2021-02-01'),
+(17, 250, 'Credit Card', '2021-04-01'),
+(10, 70, 'Mobile Payment', '2021-02-28');
 
