@@ -228,3 +228,28 @@ INSERT INTO payments (customer_id, amount, mode, payment_date) VALUES
 (17, 250, 'Credit Card', '2021-04-01'),
 (10, 70, 'Mobile Payment', '2021-02-28');
 
+
+CREATE TABLE customers (
+    customer_id BIGINT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    address_id BIGINT
+);
+
+
+INSERT INTO customers (customer_id, first_name, last_name, address_id) VALUES
+(1, 'Mary', 'Smith', 5),
+(3, 'Linda', 'Williams', 7),
+(4, 'Barbara', 'Jones', 8),
+(2, 'Madan', 'Mohan', 6),
+(17, 'R', 'Madhav', 9);
+
+
+** basic example of CTE **
+WITH my_cte as (
+  select * , avg(amount) over(order by p.customer_id) as "avg",
+count(address_id) over (order by c.customer_id ) as "count"
+  from payments as p 
+  inner join customers as c
+  on p.customer_id = c.customer_id
+) select first_name, last_name, amount from my_cte
