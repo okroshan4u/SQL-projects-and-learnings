@@ -193,4 +193,21 @@ customer_id	amount	mode			payment_date	prdStatus
 8			100		Cash			2021-01-26		moderate prd
 
 
+** case expression **
+
+select *,
+case amount
+when 100 then "plus customer"
+when 500 then "Prime Customer"
+else "Regular customer"
+end as custStatus from customer_payments
+
+
+customer_id	amount	mode		payment_date	custStatus
+1		60	Cash		2020-09-24	Regular customer
+10		70	mobile Payment	2021-02-28	Regular customer
+11		80	Cash		2021-03-01	Regular customer
+2		500	Credit Card	2020-04-27	Prime Customer
+8		100	Cash		2021-01-26	plus customer
+
 
