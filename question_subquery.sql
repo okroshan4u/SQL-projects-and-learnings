@@ -253,3 +253,52 @@ count(address_id) over (order by c.customer_id ) as "count"
   inner join customers as c
   on p.customer_id = c.customer_id
 ) select first_name, last_name, amount from my_cte
+
+
+
+** Intermediate cte **
+
+CREATE TABLE customers (
+    customer_id BIGINT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    address_id BIGINT
+);
+
+
+INSERT INTO customers (customer_id, first_name, last_name, address_id) VALUES
+(1, 'Mary', 'Smith', 5),
+(3, 'Linda', 'Williams', 7),
+(4, 'Barbara', 'Jones', 8),
+(2, 'Madan', 'Mohan', 6),
+(17, 'R', 'Madhav', 9);
+
+CREATE TABLE address (
+    address_id BIGINT PRIMARY KEY,
+    address_line VARCHAR(100),
+    city_id BIGINT,
+    postal_code VARCHAR(20)
+);
+
+INSERT INTO address (address_id, address_line, city_id, postal_code) VALUES
+(5, '123 Main Street', 101, '10001'),
+(6, '45 Park Avenue', 102, '11002'),
+(7, '78 Lake Road', 103, '22003'),
+(8, '9 Hill View', 104, '33004'),
+(9, '56 Green Street', 105, '44005');
+
+
+CREATE TABLE country (
+    city_id BIGINT PRIMARY KEY,
+    city_name VARCHAR(50),
+    country_name VARCHAR(50)
+);
+
+
+INSERT INTO country (city_id, city_name, country_name) VALUES
+(101, 'New York', 'USA'),
+(102, 'Mumbai', 'India'),
+(103, 'London', 'UK'),
+(104, 'Toronto', 'Canada'),
+(105, 'Sydney', 'Australia');
+
