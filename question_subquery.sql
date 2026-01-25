@@ -341,3 +341,27 @@ customer_id	amount	mode		payment_date	highest_price	total_price
 17		250	Credit Card	2021-04-01	500		750
 7		20	Mobile Payment	2021-02-01	70		90
 10		70	Mobile Payment	2021-02-28	70		90
+
+
+** Recursive CTE **
+with recursive roshan as(
+  select 0 as n
+  union all
+  select n+2 from roshan
+  where n<20
+)
+select * from roshan
+
+Output
+n
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
