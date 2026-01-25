@@ -333,14 +333,14 @@ on p.mode = my_cte.mode
 order by p.mode
 
 
-customer_id	amount	mode		payment_date	highest_price	total_price
-1		60	Cash		2020-09-24	100		240
-11		80	Cash		2021-03-01	100		240
-8		100	Cash		2021-01-26	100		240
-2		500	Credit Card	2020-04-27	500		750
-17		250	Credit Card	2021-04-01	500		750
-7		20	Mobile Payment	2021-02-01	70		90
-10		70	Mobile Payment	2021-02-28	70		90
+customer_id	amount	mode			payment_date	highest_price	total_price
+1			60		Cash			2020-09-24		100				240
+11			80		Cash			2021-03-01		100				240
+8			100		Cash			2021-01-26		100				240
+2			500		Credit Card		2020-04-27		500				750
+17			250		Credit Card		2021-04-01		500				750
+7			20		Mobile Payment	2021-02-01		70				90
+10			70		Mobile Payment	2021-02-28		70				90
 
 
 ** Recursive CTE **
@@ -385,3 +385,4 @@ INSERT INTO employee (emp_id, emp_name, manager_id) VALUES
 (5, 'Shiva', 4),
 (6, 'Keshav', 1),
 (7, 'Damodar', 5);
+
