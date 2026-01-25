@@ -365,3 +365,23 @@ n
 16
 18
 20
+
+
+** Intermediate Example **
+CREATE TABLE employee (
+    emp_id INTEGER PRIMARY KEY,
+    emp_name VARCHAR(50),
+    manager_id INTEGER,
+    CONSTRAINT fk_manager
+        FOREIGN KEY (manager_id)
+        REFERENCES employee(emp_id)
+);
+
+INSERT INTO employee (emp_id, emp_name, manager_id) VALUES
+(1, 'Madhav', NULL),
+(2, 'Sam', 1),
+(3, 'Tom', 2),
+(4, 'Arjun', 6),
+(5, 'Shiva', 4),
+(6, 'Keshav', 1),
+(7, 'Damodar', 5);
