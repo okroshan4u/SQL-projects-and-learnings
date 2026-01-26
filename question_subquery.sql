@@ -388,13 +388,13 @@ INSERT INTO employee (emp_id, emp_name, manager_id) VALUES
 
 Employee
 emp_id	emp_name	manager_id
-1	Madhav	
-2	Sam		1
-3	Tom		2
-4	Arjun		6
-5	Shiva		4
-6	Keshav		1
-7	Damodar		5
+1		Madhav	
+2		Sam			1
+3		Tom			2
+4		Arjun		6
+5		Shiva		4
+6		Keshav		1
+7		Damodar		5
 
 
 ** Q ** Find the management chain (hierarchy) upwards for a given employee
@@ -459,5 +459,6 @@ emp_id	emp_name	manager_id	level
 3		Tom				2		2
 5		Shiva			4		3
 7		Damodar			5		4	
+
 
 
