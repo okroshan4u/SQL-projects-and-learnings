@@ -410,3 +410,39 @@ with recursive EmpCTE as (
 on employee.emp_id = EmpCTE.manager_id
 )
 select * from EmpCTE
+
+emp_id	emp_name	manager_id
+7	Damodar		5
+5	Shiva		4
+4	Arjun		6
+6	Keshav		1
+1	Madhav		null --> final boss
+
+
+** going downwards means -- > Starting from a manager (say emp_id = 1), show all employees under them, at all levels, and show how deep they are in the hierarchy.**
+
+WITH RECURSIVE EmpCTE AS (
+    -- Anchor: start from the manager
+    SELECT 
+        emp_id,
+        emp_name,
+        manager_id,
+        0 AS level
+    FROM employee
+    WHERE emp_id = 1
+
+    UNION ALL
+
+    -- Recursive: find subordinates
+    SELECT 
+        e.emp_id,
+        e.emp_name,
+        e.manager_id,
+        c.level + 1 AS level
+    FROM employee e
+    JOIN EmpCTE c
+        ON e.manager_id = c.emp_id
+)
+SELECT * 
+FROM EmpCTE
+ORDER BY level, emp_id;
