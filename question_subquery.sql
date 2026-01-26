@@ -386,3 +386,27 @@ INSERT INTO employee (emp_id, emp_name, manager_id) VALUES
 (6, 'Keshav', 1),
 (7, 'Damodar', 5);
 
+Employee
+emp_id	emp_name	manager_id
+1	Madhav	
+2	Sam		1
+3	Tom		2
+4	Arjun		6
+5	Shiva		4
+6	Keshav		1
+7	Damodar		5
+
+
+** Q ** Find the management chain (hierarchy) upwards for a given employee
+
+with recursive EmpCTE as (
+  select emp_id , emp_name,manager_id
+  from employee
+  where emp_id = 7
+  union all
+  select employee.emp_id , employee.emp_name , employee.manager_id
+  from employee
+  join EmpCTE
+on employee.emp_id = EmpCTE.manager_id
+)
+select * from EmpCTE
