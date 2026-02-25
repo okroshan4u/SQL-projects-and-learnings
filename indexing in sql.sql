@@ -20,13 +20,14 @@ FROM employees
 WHERE last_name = 'Smith';
 
 create index idx_lastName
-    
+on employees(last_name)   
 
 
 
 SELECT * 
 FROM employees 
 WHERE last_name = 'Smith';
+
 
 
 
