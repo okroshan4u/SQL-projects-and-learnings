@@ -19,7 +19,8 @@ SELECT *
 FROM employees 
 WHERE last_name = 'Smith';
 
-
+create index idx_lastName
+    
 
 
 
