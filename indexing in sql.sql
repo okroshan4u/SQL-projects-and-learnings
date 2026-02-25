@@ -20,13 +20,13 @@ FROM employees
 WHERE last_name = 'Smith';
 
 
-CREATE INDEX idx_lastname
-ON employees(last_name);
+
 
 
 SELECT * 
 FROM employees 
 WHERE last_name = 'Smith';
+
 
 
 
