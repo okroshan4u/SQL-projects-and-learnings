@@ -1,4 +1,4 @@
-select product_name , year , pric
+select product_name , year , pri
 from Sales as s
 left join Product as p
 
