@@ -1,4 +1,4 @@
-CREATE TABLE employees (
+CREATE TABLE employees 
     id INT PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
@@ -25,4 +25,5 @@ on employees(last_name)
 SELECT * 
 FROM employees 
 WHERE last_name = 'Smith';
+
 
