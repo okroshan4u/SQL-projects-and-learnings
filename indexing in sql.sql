@@ -18,6 +18,8 @@ INSERT INTO employees (id, first_name, last_name, department, salary) VALUES
 SELECT * 
 FROM employees 
 WHERE last_name = 'Smith';
+
+// creating index here 
 create index idx_lastName
 on employees(last_name)   
 
